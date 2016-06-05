@@ -17,7 +17,14 @@
                 @* hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh *@
                 <div class="container">
                     <div class="row">
-                       
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.TextBox("searchterm", null, new { id = "textsearch" })
+                            <input type="submit" name="search" value="search" />
+
+                        }
+
                         <h2><span><img src="@Url.Content("~/Content/mystyle/")images/logoo.png  " style="height:auto;padding-right: 170px" /></span></h2>
 
                         <div class="col-sm-6 col-sm-offset-3">
