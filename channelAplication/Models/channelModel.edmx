@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ChannelFinderDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id_grp" />
+          </Key>
+          <Property Name="Id_grp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="grpOwnerID" Type="float" />
+          <Property Name="grpName_Ar" Type="nvarchar(max)" />
+          <Property Name="grpName_En" Type="nvarchar(max)" />
+          <Property Name="grpSR" Type="float" />
+          <Property Name="grpFEC" Type="nvarchar" MaxLength="255" />
+          <Property Name="grpSatID" Type="float" />
+          <Property Name="grpTP" Type="nvarchar" MaxLength="255" />
+          <Property Name="grpFreq" Type="float" />
+          <Property Name="grpPolarity_Ar" Type="nvarchar(max)" />
+          <Property Name="grpPolarity_En" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedByUsID" Type="nvarchar(max)" />
+          <Property Name="grpAddedDt" Type="datetime" />
+          <Property Name="grpEdtdByUsID" Type="nvarchar(max)" />
+          <Property Name="grpEdtDt" Type="datetime" />
+          <Property Name="grpDeletedByUsID" Type="nvarchar(max)" />
+          <Property Name="grpDeletedDt" Type="datetime" />
+          <Property Name="grpIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="grpIsPublished" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Channels">
+          <Key>
+            <PropertyRef Name="Id_chan" />
+          </Key>
+          <Property Name="Id_chan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="chanSID" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanVPID" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanAPID" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanLang" Type="nvarchar(max)" />
+          <Property Name="chanName_En" Type="nvarchar(max)" />
+          <Property Name="chanName_Ar" Type="nvarchar(max)" />
+          <Property Name="chanFreq" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanPolarity" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanSR" Type="float" />
+          <Property Name="chanFCB" Type="nvarchar(max)" />
+          <Property Name="chanSatID" Type="float" />
+          <Property Name="chanOwnerID" Type="float" />
+          <Property Name="chanLogoLink" Type="nvarchar(max)" />
+          <Property Name="chanEncryption" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanIsTeletext" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanAddres_En" Type="nvarchar(max)" />
+          <Property Name="chanAddres_Ar" Type="nvarchar(max)" />
+          <Property Name="chanLiveSreamLink" Type="nvarchar(max)" />
+          <Property Name="chanIsHD" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanType" Type="float" />
+          <Property Name="chanGroupID" Type="float" />
+          <Property Name="chanAddedByUsID" Type="nvarchar(max)" />
+          <Property Name="chanAddedDt" Type="datetime" />
+          <Property Name="chanEdtdByUsID" Type="nvarchar(max)" />
+          <Property Name="chanEdtDt" Type="datetime" />
+          <Property Name="chanDeletedByUsID" Type="nvarchar(max)" />
+          <Property Name="chanDeletedDt" Type="datetime" />
+          <Property Name="chanIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanIsPublished" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Channels_SRs">
+          <Key>
+            <PropertyRef Name="Id_chanSR" />
+          </Key>
+          <Property Name="Id_chanSR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="chanSR" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanSRAddedBy" Type="nvarchar(max)" />
+          <Property Name="chanSRAddedDT" Type="datetime" />
+          <Property Name="chanSREditedBy" Type="nvarchar(max)" />
+          <Property Name="chanSREditedDT" Type="datetime" />
+          <Property Name="chanSRDeletedBy" Type="nvarchar(max)" />
+          <Property Name="chanSRDeletedDate" Type="datetime" />
+          <Property Name="chanSRIsPublished" Type="nvarchar" MaxLength="255" />
+          <Property Name="chanSRIsDeleted" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ChannelsTypes">
+          <Key>
+            <PropertyRef Name="Id_ChanType" />
+          </Key>
+          <Property Name="Id_ChanType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChannelType_Ar" Type="nvarchar(max)" />
+          <Property Name="ChannelType_En" Type="nvarchar(max)" />
+          <Property Name="ChanTypeAddedBy" Type="nvarchar(max)" />
+          <Property Name="ChanTypeAddedDT" Type="datetime" />
+          <Property Name="ChanTypeEditedBy" Type="nvarchar(max)" />
+          <Property Name="ChanTypeEditedDT" Type="datetime" />
+          <Property Name="ChanTypeDeletedBy" Type="nvarchar(max)" />
+          <Property Name="ChanTypeDeletedDate" Type="datetime" />
+          <Property Name="ChanTypeIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="ChanTypeIsPublished" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="CoveringAreas">
+          <Key>
+            <PropertyRef Name="Id_covArea" />
+          </Key>
+          <Property Name="Id_covArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="covAreaName_Ar" Type="nvarchar(max)" />
+          <Property Name="covAreaName_En" Type="nvarchar(max)" />
+          <Property Name="covAreaLongFrom" Type="float" />
+          <Property Name="covAreaLongTo" Type="float" />
+          <Property Name="covAreaOrienFrom" Type="nvarchar" MaxLength="255" />
+          <Property Name="covAreaOrienTo" Type="nvarchar" MaxLength="255" />
+          <Property Name="covAreaCountries" Type="nvarchar(max)" />
+          <Property Name="covAreaAddedByUsID" Type="nvarchar(max)" />
+          <Property Name="covAreaAddedDt" Type="datetime" />
+          <Property Name="covAreaEdtdByUsID" Type="nvarchar(max)" />
+          <Property Name="covAreaEdtDt" Type="datetime" />
+          <Property Name="covAreaDeletedByUsID" Type="nvarchar(max)" />
+          <Property Name="covAreaDeletedDt" Type="datetime" />
+          <Property Name="covAreaIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="covAreaIsPublished" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Frequencies_Owners">
+          <Key>
+            <PropertyRef Name="Id_owner" />
+          </Key>
+          <Property Name="Id_owner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ownerName_Ar" Type="nvarchar(max)" />
+          <Property Name="ownerName_En" Type="nvarchar(max)" />
+          <Property Name="logoLink" Type="nvarchar(max)" />
+          <Property Name="ownerAdd_Ar" Type="nvarchar(max)" />
+          <Property Name="ownerAdd_En" Type="nvarchar(max)" />
+          <Property Name="ownerAddedByUsID" Type="nvarchar(max)" />
+          <Property Name="ownerAddedDt" Type="datetime" />
+          <Property Name="ownerEdtdByUsID" Type="nvarchar(max)" />
+          <Property Name="ownerEdtDt" Type="datetime" />
+          <Property Name="ownerDeletedByUsID" Type="nvarchar(max)" />
+          <Property Name="ownerDeletedDt" Type="datetime" />
+          <Property Name="ownerIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="ownerIsPublished" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LogosLinks">
+          <Key>
+            <PropertyRef Name="Id_logoslinks" />
+          </Key>
+          <Property Name="folderName" Type="nvarchar(max)" />
+          <Property Name="logosLinks" Type="nvarchar(max)" />
+          <Property Name="logosLinksAddedBy" Type="nvarchar(max)" />
+          <Property Name="logosLinksAddedDT" Type="datetime" />
+          <Property Name="logosLinksEditedBy" Type="nvarchar(max)" />
+          <Property Name="logosLinksEditedDT" Type="datetime" />
+          <Property Name="logosLinksDeletedBy" Type="nvarchar(max)" />
+          <Property Name="logosLinksDeletedDT" Type="datetime" />
+          <Property Name="logosLinksIsPublished" Type="nvarchar" MaxLength="255" />
+          <Property Name="logosLinksIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="Id_logoslinks" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Satellites_">
+          <Key>
+            <PropertyRef Name="Id_sat" />
+          </Key>
+          <Property Name="Id_sat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="satName_Ar" Type="nvarchar(max)" />
+          <Property Name="satName_En" Type="nvarchar(max)" />
+          <Property Name="satCovAreaID" Type="float" />
+          <Property Name="satLongitude" Type="nvarchar(max)" />
+          <Property Name="satLongitudeOri" Type="nvarchar" MaxLength="255" />
+          <Property Name="satSystem" Type="nvarchar(max)" />
+          <Property Name="satLogoName" Type="nvarchar(max)" />
+          <Property Name="satAddedByUsID" Type="nvarchar(max)" />
+          <Property Name="satAddedDt" Type="datetime" />
+          <Property Name="satEdtdByUsID" Type="nvarchar(max)" />
+          <Property Name="satEdtDt" Type="datetime" />
+          <Property Name="satDeletedByUsID" Type="nvarchar(max)" />
+          <Property Name="satDeletedDt" Type="datetime" />
+          <Property Name="satIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="satIsPublished" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="userName_Ar" Type="nvarchar(max)" />
+          <Property Name="userName_En" Type="nvarchar(max)" />
+          <Property Name="Id_userEmail" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="userType" Type="nvarchar(max)" />
+          <Property Name="userAddedDt" Type="datetime" />
+          <Property Name="userEdtdByUsID" Type="nvarchar(max)" />
+          <Property Name="userEdtDt" Type="datetime" />
+          <Property Name="userDeletedByUsID" Type="nvarchar(max)" />
+          <Property Name="userDeletedDt" Type="datetime" />
+          <Property Name="userIsDeleted" Type="nvarchar" MaxLength="255" />
+          <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ChannelFinderDBModelStoreContainer">
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Channels" EntityType="Self.Channels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Channels_SRs" EntityType="Self.Channels_SRs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChannelsTypes" EntityType="Self.ChannelsTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoveringAreas" EntityType="Self.CoveringAreas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Frequencies_Owners" EntityType="Self.Frequencies_Owners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogosLinks" EntityType="Self.LogosLinks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Satellites_" EntityType="Self.Satellites_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChannelFinderDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id_grp" />
+          </Key>
+          <Property Name="Id_grp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="grpOwnerID" Type="Double" />
+          <Property Name="grpName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grpName_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grpSR" Type="Double" />
+          <Property Name="grpFEC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="grpSatID" Type="Double" />
+          <Property Name="grpTP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="grpFreq" Type="Double" />
+          <Property Name="grpPolarity_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grpPolarity_En" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grpAddedDt" Type="DateTime" Precision="3" />
+          <Property Name="grpEdtdByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grpEdtDt" Type="DateTime" Precision="3" />
+          <Property Name="grpDeletedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="grpDeletedDt" Type="DateTime" Precision="3" />
+          <Property Name="grpIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="grpIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Channel">
+          <Key>
+            <PropertyRef Name="Id_chan" />
+          </Key>
+          <Property Name="Id_chan" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chanSID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanVPID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanAPID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanLang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanName_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanFreq" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanPolarity" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanSR" Type="Double" />
+          <Property Name="chanFCB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanSatID" Type="Double" />
+          <Property Name="chanOwnerID" Type="Double" />
+          <Property Name="chanLogoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanEncryption" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanIsTeletext" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanAddres_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanAddres_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanLiveSreamLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanIsHD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanType" Type="Double" />
+          <Property Name="chanGroupID" Type="Double" />
+          <Property Name="chanAddedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanAddedDt" Type="DateTime" Precision="3" />
+          <Property Name="chanEdtdByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanEdtDt" Type="DateTime" Precision="3" />
+          <Property Name="chanDeletedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanDeletedDt" Type="DateTime" Precision="3" />
+          <Property Name="chanIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Channels_SRs">
+          <Key>
+            <PropertyRef Name="Id_chanSR" />
+          </Key>
+          <Property Name="Id_chanSR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="chanSR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanSRAddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanSRAddedDT" Type="DateTime" Precision="3" />
+          <Property Name="chanSREditedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanSREditedDT" Type="DateTime" Precision="3" />
+          <Property Name="chanSRDeletedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="chanSRDeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="chanSRIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chanSRIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ChannelsType">
+          <Key>
+            <PropertyRef Name="Id_ChanType" />
+          </Key>
+          <Property Name="Id_ChanType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChannelType_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChannelType_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChanTypeAddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChanTypeAddedDT" Type="DateTime" Precision="3" />
+          <Property Name="ChanTypeEditedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChanTypeEditedDT" Type="DateTime" Precision="3" />
+          <Property Name="ChanTypeDeletedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ChanTypeDeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="ChanTypeIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ChanTypeIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CoveringArea">
+          <Key>
+            <PropertyRef Name="Id_covArea" />
+          </Key>
+          <Property Name="Id_covArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="covAreaName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaName_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaLongFrom" Type="Double" />
+          <Property Name="covAreaLongTo" Type="Double" />
+          <Property Name="covAreaOrienFrom" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaOrienTo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaCountries" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaAddedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaAddedDt" Type="DateTime" Precision="3" />
+          <Property Name="covAreaEdtdByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaEdtDt" Type="DateTime" Precision="3" />
+          <Property Name="covAreaDeletedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaDeletedDt" Type="DateTime" Precision="3" />
+          <Property Name="covAreaIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="covAreaIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Frequencies_Owners">
+          <Key>
+            <PropertyRef Name="Id_owner" />
+          </Key>
+          <Property Name="Id_owner" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ownerName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerName_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logoLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerAdd_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerAdd_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerAddedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerAddedDt" Type="DateTime" Precision="3" />
+          <Property Name="ownerEdtdByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerEdtDt" Type="DateTime" Precision="3" />
+          <Property Name="ownerDeletedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ownerDeletedDt" Type="DateTime" Precision="3" />
+          <Property Name="ownerIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ownerIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LogosLink">
+          <Key>
+            <PropertyRef Name="Id_logoslinks" />
+          </Key>
+          <Property Name="folderName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logosLinks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logosLinksAddedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logosLinksAddedDT" Type="DateTime" Precision="3" />
+          <Property Name="logosLinksEditedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logosLinksEditedDT" Type="DateTime" Precision="3" />
+          <Property Name="logosLinksDeletedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="logosLinksDeletedDT" Type="DateTime" Precision="3" />
+          <Property Name="logosLinksIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="logosLinksIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Id_logoslinks" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Satellites_">
+          <Key>
+            <PropertyRef Name="Id_sat" />
+          </Key>
+          <Property Name="Id_sat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="satName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satName_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satCovAreaID" Type="Double" />
+          <Property Name="satLongitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satLongitudeOri" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="satSystem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satLogoName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satAddedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satAddedDt" Type="DateTime" Precision="3" />
+          <Property Name="satEdtdByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satEdtDt" Type="DateTime" Precision="3" />
+          <Property Name="satDeletedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="satDeletedDt" Type="DateTime" Precision="3" />
+          <Property Name="satIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="satIsPublished" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="userName_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userName_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Id_userEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userAddedDt" Type="DateTime" Precision="3" />
+          <Property Name="userEdtdByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userEdtDt" Type="DateTime" Precision="3" />
+          <Property Name="userDeletedByUsID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userDeletedDt" Type="DateTime" Precision="3" />
+          <Property Name="userIsDeleted" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="DefaultConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Channels" EntityType="Self.Channel" />
+          <EntitySet Name="Channels_SRs" EntityType="Self.Channels_SRs" />
+          <EntitySet Name="ChannelsTypes" EntityType="Self.ChannelsType" />
+          <EntitySet Name="CoveringAreas" EntityType="Self.CoveringArea" />
+          <EntitySet Name="Frequencies_Owners" EntityType="Self.Frequencies_Owners" />
+          <EntitySet Name="LogosLinks" EntityType="Self.LogosLink" />
+          <EntitySet Name="Satellites_" EntityType="Self.Satellites_" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChannelFinderDBModelStoreContainer" CdmEntityContainer="DefaultConnection">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Id_grp" ColumnName="Id_grp" />
+                <ScalarProperty Name="grpOwnerID" ColumnName="grpOwnerID" />
+                <ScalarProperty Name="grpName_Ar" ColumnName="grpName_Ar" />
+                <ScalarProperty Name="grpName_En" ColumnName="grpName_En" />
+                <ScalarProperty Name="grpSR" ColumnName="grpSR" />
+                <ScalarProperty Name="grpFEC" ColumnName="grpFEC" />
+                <ScalarProperty Name="grpSatID" ColumnName="grpSatID" />
+                <ScalarProperty Name="grpTP" ColumnName="grpTP" />
+                <ScalarProperty Name="grpFreq" ColumnName="grpFreq" />
+                <ScalarProperty Name="grpPolarity_Ar" ColumnName="grpPolarity_Ar" />
+                <ScalarProperty Name="grpPolarity_En" ColumnName="grpPolarity_En" />
+                <ScalarProperty Name="AddedByUsID" ColumnName="AddedByUsID" />
+                <ScalarProperty Name="grpAddedDt" ColumnName="grpAddedDt" />
+                <ScalarProperty Name="grpEdtdByUsID" ColumnName="grpEdtdByUsID" />
+                <ScalarProperty Name="grpEdtDt" ColumnName="grpEdtDt" />
+                <ScalarProperty Name="grpDeletedByUsID" ColumnName="grpDeletedByUsID" />
+                <ScalarProperty Name="grpDeletedDt" ColumnName="grpDeletedDt" />
+                <ScalarProperty Name="grpIsDeleted" ColumnName="grpIsDeleted" />
+                <ScalarProperty Name="grpIsPublished" ColumnName="grpIsPublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Channels">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.Channel">
+              <MappingFragment StoreEntitySet="Channels">
+                <ScalarProperty Name="Id_chan" ColumnName="Id_chan" />
+                <ScalarProperty Name="chanSID" ColumnName="chanSID" />
+                <ScalarProperty Name="chanVPID" ColumnName="chanVPID" />
+                <ScalarProperty Name="chanAPID" ColumnName="chanAPID" />
+                <ScalarProperty Name="chanLang" ColumnName="chanLang" />
+                <ScalarProperty Name="chanName_En" ColumnName="chanName_En" />
+                <ScalarProperty Name="chanName_Ar" ColumnName="chanName_Ar" />
+                <ScalarProperty Name="chanFreq" ColumnName="chanFreq" />
+                <ScalarProperty Name="chanPolarity" ColumnName="chanPolarity" />
+                <ScalarProperty Name="chanSR" ColumnName="chanSR" />
+                <ScalarProperty Name="chanFCB" ColumnName="chanFCB" />
+                <ScalarProperty Name="chanSatID" ColumnName="chanSatID" />
+                <ScalarProperty Name="chanOwnerID" ColumnName="chanOwnerID" />
+                <ScalarProperty Name="chanLogoLink" ColumnName="chanLogoLink" />
+                <ScalarProperty Name="chanEncryption" ColumnName="chanEncryption" />
+                <ScalarProperty Name="chanIsTeletext" ColumnName="chanIsTeletext" />
+                <ScalarProperty Name="chanAddres_En" ColumnName="chanAddres_En" />
+                <ScalarProperty Name="chanAddres_Ar" ColumnName="chanAddres_Ar" />
+                <ScalarProperty Name="chanLiveSreamLink" ColumnName="chanLiveSreamLink" />
+                <ScalarProperty Name="chanIsHD" ColumnName="chanIsHD" />
+                <ScalarProperty Name="chanType" ColumnName="chanType" />
+                <ScalarProperty Name="chanGroupID" ColumnName="chanGroupID" />
+                <ScalarProperty Name="chanAddedByUsID" ColumnName="chanAddedByUsID" />
+                <ScalarProperty Name="chanAddedDt" ColumnName="chanAddedDt" />
+                <ScalarProperty Name="chanEdtdByUsID" ColumnName="chanEdtdByUsID" />
+                <ScalarProperty Name="chanEdtDt" ColumnName="chanEdtDt" />
+                <ScalarProperty Name="chanDeletedByUsID" ColumnName="chanDeletedByUsID" />
+                <ScalarProperty Name="chanDeletedDt" ColumnName="chanDeletedDt" />
+                <ScalarProperty Name="chanIsDeleted" ColumnName="chanIsDeleted" />
+                <ScalarProperty Name="chanIsPublished" ColumnName="chanIsPublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Channels_SRs">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.Channels_SRs">
+              <MappingFragment StoreEntitySet="Channels_SRs">
+                <ScalarProperty Name="Id_chanSR" ColumnName="Id_chanSR" />
+                <ScalarProperty Name="chanSR" ColumnName="chanSR" />
+                <ScalarProperty Name="chanSRAddedBy" ColumnName="chanSRAddedBy" />
+                <ScalarProperty Name="chanSRAddedDT" ColumnName="chanSRAddedDT" />
+                <ScalarProperty Name="chanSREditedBy" ColumnName="chanSREditedBy" />
+                <ScalarProperty Name="chanSREditedDT" ColumnName="chanSREditedDT" />
+                <ScalarProperty Name="chanSRDeletedBy" ColumnName="chanSRDeletedBy" />
+                <ScalarProperty Name="chanSRDeletedDate" ColumnName="chanSRDeletedDate" />
+                <ScalarProperty Name="chanSRIsPublished" ColumnName="chanSRIsPublished" />
+                <ScalarProperty Name="chanSRIsDeleted" ColumnName="chanSRIsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChannelsTypes">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.ChannelsType">
+              <MappingFragment StoreEntitySet="ChannelsTypes">
+                <ScalarProperty Name="Id_ChanType" ColumnName="Id_ChanType" />
+                <ScalarProperty Name="ChannelType_Ar" ColumnName="ChannelType_Ar" />
+                <ScalarProperty Name="ChannelType_En" ColumnName="ChannelType_En" />
+                <ScalarProperty Name="ChanTypeAddedBy" ColumnName="ChanTypeAddedBy" />
+                <ScalarProperty Name="ChanTypeAddedDT" ColumnName="ChanTypeAddedDT" />
+                <ScalarProperty Name="ChanTypeEditedBy" ColumnName="ChanTypeEditedBy" />
+                <ScalarProperty Name="ChanTypeEditedDT" ColumnName="ChanTypeEditedDT" />
+                <ScalarProperty Name="ChanTypeDeletedBy" ColumnName="ChanTypeDeletedBy" />
+                <ScalarProperty Name="ChanTypeDeletedDate" ColumnName="ChanTypeDeletedDate" />
+                <ScalarProperty Name="ChanTypeIsDeleted" ColumnName="ChanTypeIsDeleted" />
+                <ScalarProperty Name="ChanTypeIsPublished" ColumnName="ChanTypeIsPublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoveringAreas">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.CoveringArea">
+              <MappingFragment StoreEntitySet="CoveringAreas">
+                <ScalarProperty Name="Id_covArea" ColumnName="Id_covArea" />
+                <ScalarProperty Name="covAreaName_Ar" ColumnName="covAreaName_Ar" />
+                <ScalarProperty Name="covAreaName_En" ColumnName="covAreaName_En" />
+                <ScalarProperty Name="covAreaLongFrom" ColumnName="covAreaLongFrom" />
+                <ScalarProperty Name="covAreaLongTo" ColumnName="covAreaLongTo" />
+                <ScalarProperty Name="covAreaOrienFrom" ColumnName="covAreaOrienFrom" />
+                <ScalarProperty Name="covAreaOrienTo" ColumnName="covAreaOrienTo" />
+                <ScalarProperty Name="covAreaCountries" ColumnName="covAreaCountries" />
+                <ScalarProperty Name="covAreaAddedByUsID" ColumnName="covAreaAddedByUsID" />
+                <ScalarProperty Name="covAreaAddedDt" ColumnName="covAreaAddedDt" />
+                <ScalarProperty Name="covAreaEdtdByUsID" ColumnName="covAreaEdtdByUsID" />
+                <ScalarProperty Name="covAreaEdtDt" ColumnName="covAreaEdtDt" />
+                <ScalarProperty Name="covAreaDeletedByUsID" ColumnName="covAreaDeletedByUsID" />
+                <ScalarProperty Name="covAreaDeletedDt" ColumnName="covAreaDeletedDt" />
+                <ScalarProperty Name="covAreaIsDeleted" ColumnName="covAreaIsDeleted" />
+                <ScalarProperty Name="covAreaIsPublished" ColumnName="covAreaIsPublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Frequencies_Owners">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.Frequencies_Owners">
+              <MappingFragment StoreEntitySet="Frequencies_Owners">
+                <ScalarProperty Name="Id_owner" ColumnName="Id_owner" />
+                <ScalarProperty Name="ownerName_Ar" ColumnName="ownerName_Ar" />
+                <ScalarProperty Name="ownerName_En" ColumnName="ownerName_En" />
+                <ScalarProperty Name="logoLink" ColumnName="logoLink" />
+                <ScalarProperty Name="ownerAdd_Ar" ColumnName="ownerAdd_Ar" />
+                <ScalarProperty Name="ownerAdd_En" ColumnName="ownerAdd_En" />
+                <ScalarProperty Name="ownerAddedByUsID" ColumnName="ownerAddedByUsID" />
+                <ScalarProperty Name="ownerAddedDt" ColumnName="ownerAddedDt" />
+                <ScalarProperty Name="ownerEdtdByUsID" ColumnName="ownerEdtdByUsID" />
+                <ScalarProperty Name="ownerEdtDt" ColumnName="ownerEdtDt" />
+                <ScalarProperty Name="ownerDeletedByUsID" ColumnName="ownerDeletedByUsID" />
+                <ScalarProperty Name="ownerDeletedDt" ColumnName="ownerDeletedDt" />
+                <ScalarProperty Name="ownerIsDeleted" ColumnName="ownerIsDeleted" />
+                <ScalarProperty Name="ownerIsPublished" ColumnName="ownerIsPublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogosLinks">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.LogosLink">
+              <MappingFragment StoreEntitySet="LogosLinks">
+                <ScalarProperty Name="folderName" ColumnName="folderName" />
+                <ScalarProperty Name="logosLinks" ColumnName="logosLinks" />
+                <ScalarProperty Name="logosLinksAddedBy" ColumnName="logosLinksAddedBy" />
+                <ScalarProperty Name="logosLinksAddedDT" ColumnName="logosLinksAddedDT" />
+                <ScalarProperty Name="logosLinksEditedBy" ColumnName="logosLinksEditedBy" />
+                <ScalarProperty Name="logosLinksEditedDT" ColumnName="logosLinksEditedDT" />
+                <ScalarProperty Name="logosLinksDeletedBy" ColumnName="logosLinksDeletedBy" />
+                <ScalarProperty Name="logosLinksDeletedDT" ColumnName="logosLinksDeletedDT" />
+                <ScalarProperty Name="logosLinksIsPublished" ColumnName="logosLinksIsPublished" />
+                <ScalarProperty Name="logosLinksIsDeleted" ColumnName="logosLinksIsDeleted" />
+                <ScalarProperty Name="Id_logoslinks" ColumnName="Id_logoslinks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Satellites_">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.Satellites_">
+              <MappingFragment StoreEntitySet="Satellites_">
+                <ScalarProperty Name="Id_sat" ColumnName="Id_sat" />
+                <ScalarProperty Name="satName_Ar" ColumnName="satName_Ar" />
+                <ScalarProperty Name="satName_En" ColumnName="satName_En" />
+                <ScalarProperty Name="satCovAreaID" ColumnName="satCovAreaID" />
+                <ScalarProperty Name="satLongitude" ColumnName="satLongitude" />
+                <ScalarProperty Name="satLongitudeOri" ColumnName="satLongitudeOri" />
+                <ScalarProperty Name="satSystem" ColumnName="satSystem" />
+                <ScalarProperty Name="satLogoName" ColumnName="satLogoName" />
+                <ScalarProperty Name="satAddedByUsID" ColumnName="satAddedByUsID" />
+                <ScalarProperty Name="satAddedDt" ColumnName="satAddedDt" />
+                <ScalarProperty Name="satEdtdByUsID" ColumnName="satEdtdByUsID" />
+                <ScalarProperty Name="satEdtDt" ColumnName="satEdtDt" />
+                <ScalarProperty Name="satDeletedByUsID" ColumnName="satDeletedByUsID" />
+                <ScalarProperty Name="satDeletedDt" ColumnName="satDeletedDt" />
+                <ScalarProperty Name="satIsDeleted" ColumnName="satIsDeleted" />
+                <ScalarProperty Name="satIsPublished" ColumnName="satIsPublished" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ChannelFinderDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userName_Ar" ColumnName="userName_Ar" />
+                <ScalarProperty Name="userName_En" ColumnName="userName_En" />
+                <ScalarProperty Name="Id_userEmail" ColumnName="Id_userEmail" />
+                <ScalarProperty Name="userType" ColumnName="userType" />
+                <ScalarProperty Name="userAddedDt" ColumnName="userAddedDt" />
+                <ScalarProperty Name="userEdtdByUsID" ColumnName="userEdtdByUsID" />
+                <ScalarProperty Name="userEdtDt" ColumnName="userEdtDt" />
+                <ScalarProperty Name="userDeletedByUsID" ColumnName="userDeletedByUsID" />
+                <ScalarProperty Name="userDeletedDt" ColumnName="userDeletedDt" />
+                <ScalarProperty Name="userIsDeleted" ColumnName="userIsDeleted" />
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

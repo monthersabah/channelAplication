@@ -1,0 +1,46 @@
+﻿@model IEnumerable<channelAplication.Models.Category>
+
+@{
+    ViewBag.Title = "category";
+    Layout = "~/Views/sherd/_MainMenu.cshtml";
+}
+}
+
+<h2>category</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.grpName_Ar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grpName_En)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.grpName_Ar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grpName_En)
+            </td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_grp }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id_grp }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_grp })
+            </td>
+        </tr>
+    }
+
+</table>

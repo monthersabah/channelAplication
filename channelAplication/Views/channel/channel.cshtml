@@ -1,0 +1,88 @@
+﻿@model IEnumerable<channelAplication.Models.Channel>
+
+@{
+    ViewBag.Title = "channel";
+    Layout = "~/Views/sherd/_MainMenu.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<html>
+<head>
+    <link href="~/content/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/scripts/jquery.js"></script>
+    <script src="~/scripts/jquery-ui.min.js"></script>
+   
+    
+    
+    <script>
+
+        $(function () {
+            $("#textsearch").autocomplete({ source:'@Url.Action("searchchannel")' })
+        });
+
+     </script>
+</head>
+<body>
+    <h2>channel</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.TextBox("searchterm", null, new { id = "textsearch" })
+        <input type="submit" name="search" value="search" />
+
+    }
+    <table class="table">
+        <tr>
+
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.chanName_En)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chanName_Ar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chanFreq)
+            </th>
+
+
+
+
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.chanName_En)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.chanName_Ar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.chanFreq)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id_chan }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id_chan }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id_chan })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

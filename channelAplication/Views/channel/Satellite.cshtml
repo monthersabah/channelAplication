@@ -1,0 +1,69 @@
+﻿@model IEnumerable<channelAplication.Models.Satellites_>
+
+@{
+    ViewBag.Title = "Satellite";
+    Layout = "~/Views/sherd/_MainMenu.cshtml";
+}
+
+<h2>satellite</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.satName_Ar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.satName_En)
+        </th>
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.satSystem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.satLogoName)
+        </th>
+
+
+
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.satName_Ar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.satName_En)
+            </td>
+
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.satSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.satLogoName)
+            </td>
+
+
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id_sat }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id_sat }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id_sat })
+            </td>
+        </tr>
+    }
+
+</table>
