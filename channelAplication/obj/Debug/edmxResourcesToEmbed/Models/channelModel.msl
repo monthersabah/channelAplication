@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChannelFinderDBModelStoreContainer" CdmEntityContainer="DefaultConnection">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id_grp" ColumnName="Id_grp" />
+          <ScalarProperty Name="grpOwnerID" ColumnName="grpOwnerID" />
+          <ScalarProperty Name="grpName_Ar" ColumnName="grpName_Ar" />
+          <ScalarProperty Name="grpName_En" ColumnName="grpName_En" />
+          <ScalarProperty Name="grpSR" ColumnName="grpSR" />
+          <ScalarProperty Name="grpFEC" ColumnName="grpFEC" />
+          <ScalarProperty Name="grpSatID" ColumnName="grpSatID" />
+          <ScalarProperty Name="grpTP" ColumnName="grpTP" />
+          <ScalarProperty Name="grpFreq" ColumnName="grpFreq" />
+          <ScalarProperty Name="grpPolarity_Ar" ColumnName="grpPolarity_Ar" />
+          <ScalarProperty Name="grpPolarity_En" ColumnName="grpPolarity_En" />
+          <ScalarProperty Name="AddedByUsID" ColumnName="AddedByUsID" />
+          <ScalarProperty Name="grpAddedDt" ColumnName="grpAddedDt" />
+          <ScalarProperty Name="grpEdtdByUsID" ColumnName="grpEdtdByUsID" />
+          <ScalarProperty Name="grpEdtDt" ColumnName="grpEdtDt" />
+          <ScalarProperty Name="grpDeletedByUsID" ColumnName="grpDeletedByUsID" />
+          <ScalarProperty Name="grpDeletedDt" ColumnName="grpDeletedDt" />
+          <ScalarProperty Name="grpIsDeleted" ColumnName="grpIsDeleted" />
+          <ScalarProperty Name="grpIsPublished" ColumnName="grpIsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Channels">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.Channel">
+        <MappingFragment StoreEntitySet="Channels">
+          <ScalarProperty Name="Id_chan" ColumnName="Id_chan" />
+          <ScalarProperty Name="chanSID" ColumnName="chanSID" />
+          <ScalarProperty Name="chanVPID" ColumnName="chanVPID" />
+          <ScalarProperty Name="chanAPID" ColumnName="chanAPID" />
+          <ScalarProperty Name="chanLang" ColumnName="chanLang" />
+          <ScalarProperty Name="chanName_En" ColumnName="chanName_En" />
+          <ScalarProperty Name="chanName_Ar" ColumnName="chanName_Ar" />
+          <ScalarProperty Name="chanFreq" ColumnName="chanFreq" />
+          <ScalarProperty Name="chanPolarity" ColumnName="chanPolarity" />
+          <ScalarProperty Name="chanSR" ColumnName="chanSR" />
+          <ScalarProperty Name="chanFCB" ColumnName="chanFCB" />
+          <ScalarProperty Name="chanSatID" ColumnName="chanSatID" />
+          <ScalarProperty Name="chanOwnerID" ColumnName="chanOwnerID" />
+          <ScalarProperty Name="chanLogoLink" ColumnName="chanLogoLink" />
+          <ScalarProperty Name="chanEncryption" ColumnName="chanEncryption" />
+          <ScalarProperty Name="chanIsTeletext" ColumnName="chanIsTeletext" />
+          <ScalarProperty Name="chanAddres_En" ColumnName="chanAddres_En" />
+          <ScalarProperty Name="chanAddres_Ar" ColumnName="chanAddres_Ar" />
+          <ScalarProperty Name="chanLiveSreamLink" ColumnName="chanLiveSreamLink" />
+          <ScalarProperty Name="chanIsHD" ColumnName="chanIsHD" />
+          <ScalarProperty Name="chanType" ColumnName="chanType" />
+          <ScalarProperty Name="chanGroupID" ColumnName="chanGroupID" />
+          <ScalarProperty Name="chanAddedByUsID" ColumnName="chanAddedByUsID" />
+          <ScalarProperty Name="chanAddedDt" ColumnName="chanAddedDt" />
+          <ScalarProperty Name="chanEdtdByUsID" ColumnName="chanEdtdByUsID" />
+          <ScalarProperty Name="chanEdtDt" ColumnName="chanEdtDt" />
+          <ScalarProperty Name="chanDeletedByUsID" ColumnName="chanDeletedByUsID" />
+          <ScalarProperty Name="chanDeletedDt" ColumnName="chanDeletedDt" />
+          <ScalarProperty Name="chanIsDeleted" ColumnName="chanIsDeleted" />
+          <ScalarProperty Name="chanIsPublished" ColumnName="chanIsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Channels_SRs">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.Channels_SRs">
+        <MappingFragment StoreEntitySet="Channels_SRs">
+          <ScalarProperty Name="Id_chanSR" ColumnName="Id_chanSR" />
+          <ScalarProperty Name="chanSR" ColumnName="chanSR" />
+          <ScalarProperty Name="chanSRAddedBy" ColumnName="chanSRAddedBy" />
+          <ScalarProperty Name="chanSRAddedDT" ColumnName="chanSRAddedDT" />
+          <ScalarProperty Name="chanSREditedBy" ColumnName="chanSREditedBy" />
+          <ScalarProperty Name="chanSREditedDT" ColumnName="chanSREditedDT" />
+          <ScalarProperty Name="chanSRDeletedBy" ColumnName="chanSRDeletedBy" />
+          <ScalarProperty Name="chanSRDeletedDate" ColumnName="chanSRDeletedDate" />
+          <ScalarProperty Name="chanSRIsPublished" ColumnName="chanSRIsPublished" />
+          <ScalarProperty Name="chanSRIsDeleted" ColumnName="chanSRIsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChannelsTypes">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.ChannelsType">
+        <MappingFragment StoreEntitySet="ChannelsTypes">
+          <ScalarProperty Name="Id_ChanType" ColumnName="Id_ChanType" />
+          <ScalarProperty Name="ChannelType_Ar" ColumnName="ChannelType_Ar" />
+          <ScalarProperty Name="ChannelType_En" ColumnName="ChannelType_En" />
+          <ScalarProperty Name="ChanTypeAddedBy" ColumnName="ChanTypeAddedBy" />
+          <ScalarProperty Name="ChanTypeAddedDT" ColumnName="ChanTypeAddedDT" />
+          <ScalarProperty Name="ChanTypeEditedBy" ColumnName="ChanTypeEditedBy" />
+          <ScalarProperty Name="ChanTypeEditedDT" ColumnName="ChanTypeEditedDT" />
+          <ScalarProperty Name="ChanTypeDeletedBy" ColumnName="ChanTypeDeletedBy" />
+          <ScalarProperty Name="ChanTypeDeletedDate" ColumnName="ChanTypeDeletedDate" />
+          <ScalarProperty Name="ChanTypeIsDeleted" ColumnName="ChanTypeIsDeleted" />
+          <ScalarProperty Name="ChanTypeIsPublished" ColumnName="ChanTypeIsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CoveringAreas">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.CoveringArea">
+        <MappingFragment StoreEntitySet="CoveringAreas">
+          <ScalarProperty Name="Id_covArea" ColumnName="Id_covArea" />
+          <ScalarProperty Name="covAreaName_Ar" ColumnName="covAreaName_Ar" />
+          <ScalarProperty Name="covAreaName_En" ColumnName="covAreaName_En" />
+          <ScalarProperty Name="covAreaLongFrom" ColumnName="covAreaLongFrom" />
+          <ScalarProperty Name="covAreaLongTo" ColumnName="covAreaLongTo" />
+          <ScalarProperty Name="covAreaOrienFrom" ColumnName="covAreaOrienFrom" />
+          <ScalarProperty Name="covAreaOrienTo" ColumnName="covAreaOrienTo" />
+          <ScalarProperty Name="covAreaCountries" ColumnName="covAreaCountries" />
+          <ScalarProperty Name="covAreaAddedByUsID" ColumnName="covAreaAddedByUsID" />
+          <ScalarProperty Name="covAreaAddedDt" ColumnName="covAreaAddedDt" />
+          <ScalarProperty Name="covAreaEdtdByUsID" ColumnName="covAreaEdtdByUsID" />
+          <ScalarProperty Name="covAreaEdtDt" ColumnName="covAreaEdtDt" />
+          <ScalarProperty Name="covAreaDeletedByUsID" ColumnName="covAreaDeletedByUsID" />
+          <ScalarProperty Name="covAreaDeletedDt" ColumnName="covAreaDeletedDt" />
+          <ScalarProperty Name="covAreaIsDeleted" ColumnName="covAreaIsDeleted" />
+          <ScalarProperty Name="covAreaIsPublished" ColumnName="covAreaIsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frequencies_Owners">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.Frequencies_Owners">
+        <MappingFragment StoreEntitySet="Frequencies_Owners">
+          <ScalarProperty Name="Id_owner" ColumnName="Id_owner" />
+          <ScalarProperty Name="ownerName_Ar" ColumnName="ownerName_Ar" />
+          <ScalarProperty Name="ownerName_En" ColumnName="ownerName_En" />
+          <ScalarProperty Name="logoLink" ColumnName="logoLink" />
+          <ScalarProperty Name="ownerAdd_Ar" ColumnName="ownerAdd_Ar" />
+          <ScalarProperty Name="ownerAdd_En" ColumnName="ownerAdd_En" />
+          <ScalarProperty Name="ownerAddedByUsID" ColumnName="ownerAddedByUsID" />
+          <ScalarProperty Name="ownerAddedDt" ColumnName="ownerAddedDt" />
+          <ScalarProperty Name="ownerEdtdByUsID" ColumnName="ownerEdtdByUsID" />
+          <ScalarProperty Name="ownerEdtDt" ColumnName="ownerEdtDt" />
+          <ScalarProperty Name="ownerDeletedByUsID" ColumnName="ownerDeletedByUsID" />
+          <ScalarProperty Name="ownerDeletedDt" ColumnName="ownerDeletedDt" />
+          <ScalarProperty Name="ownerIsDeleted" ColumnName="ownerIsDeleted" />
+          <ScalarProperty Name="ownerIsPublished" ColumnName="ownerIsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogosLinks">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.LogosLink">
+        <MappingFragment StoreEntitySet="LogosLinks">
+          <ScalarProperty Name="folderName" ColumnName="folderName" />
+          <ScalarProperty Name="logosLinks" ColumnName="logosLinks" />
+          <ScalarProperty Name="logosLinksAddedBy" ColumnName="logosLinksAddedBy" />
+          <ScalarProperty Name="logosLinksAddedDT" ColumnName="logosLinksAddedDT" />
+          <ScalarProperty Name="logosLinksEditedBy" ColumnName="logosLinksEditedBy" />
+          <ScalarProperty Name="logosLinksEditedDT" ColumnName="logosLinksEditedDT" />
+          <ScalarProperty Name="logosLinksDeletedBy" ColumnName="logosLinksDeletedBy" />
+          <ScalarProperty Name="logosLinksDeletedDT" ColumnName="logosLinksDeletedDT" />
+          <ScalarProperty Name="logosLinksIsPublished" ColumnName="logosLinksIsPublished" />
+          <ScalarProperty Name="logosLinksIsDeleted" ColumnName="logosLinksIsDeleted" />
+          <ScalarProperty Name="Id_logoslinks" ColumnName="Id_logoslinks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satellites_">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.Satellites_">
+        <MappingFragment StoreEntitySet="Satellites_">
+          <ScalarProperty Name="Id_sat" ColumnName="Id_sat" />
+          <ScalarProperty Name="satName_Ar" ColumnName="satName_Ar" />
+          <ScalarProperty Name="satName_En" ColumnName="satName_En" />
+          <ScalarProperty Name="satCovAreaID" ColumnName="satCovAreaID" />
+          <ScalarProperty Name="satLongitude" ColumnName="satLongitude" />
+          <ScalarProperty Name="satLongitudeOri" ColumnName="satLongitudeOri" />
+          <ScalarProperty Name="satSystem" ColumnName="satSystem" />
+          <ScalarProperty Name="satLogoName" ColumnName="satLogoName" />
+          <ScalarProperty Name="satAddedByUsID" ColumnName="satAddedByUsID" />
+          <ScalarProperty Name="satAddedDt" ColumnName="satAddedDt" />
+          <ScalarProperty Name="satEdtdByUsID" ColumnName="satEdtdByUsID" />
+          <ScalarProperty Name="satEdtDt" ColumnName="satEdtDt" />
+          <ScalarProperty Name="satDeletedByUsID" ColumnName="satDeletedByUsID" />
+          <ScalarProperty Name="satDeletedDt" ColumnName="satDeletedDt" />
+          <ScalarProperty Name="satIsDeleted" ColumnName="satIsDeleted" />
+          <ScalarProperty Name="satIsPublished" ColumnName="satIsPublished" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ChannelFinderDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="userName_Ar" ColumnName="userName_Ar" />
+          <ScalarProperty Name="userName_En" ColumnName="userName_En" />
+          <ScalarProperty Name="Id_userEmail" ColumnName="Id_userEmail" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+          <ScalarProperty Name="userAddedDt" ColumnName="userAddedDt" />
+          <ScalarProperty Name="userEdtdByUsID" ColumnName="userEdtdByUsID" />
+          <ScalarProperty Name="userEdtDt" ColumnName="userEdtDt" />
+          <ScalarProperty Name="userDeletedByUsID" ColumnName="userDeletedByUsID" />
+          <ScalarProperty Name="userDeletedDt" ColumnName="userDeletedDt" />
+          <ScalarProperty Name="userIsDeleted" ColumnName="userIsDeleted" />
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChannelFinderDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id_grp" />
+    </Key>
+    <Property Name="Id_grp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grpOwnerID" Type="float" />
+    <Property Name="grpName_Ar" Type="nvarchar(max)" />
+    <Property Name="grpName_En" Type="nvarchar(max)" />
+    <Property Name="grpSR" Type="float" />
+    <Property Name="grpFEC" Type="nvarchar" MaxLength="255" />
+    <Property Name="grpSatID" Type="float" />
+    <Property Name="grpTP" Type="nvarchar" MaxLength="255" />
+    <Property Name="grpFreq" Type="float" />
+    <Property Name="grpPolarity_Ar" Type="nvarchar(max)" />
+    <Property Name="grpPolarity_En" Type="nvarchar" MaxLength="255" />
+    <Property Name="AddedByUsID" Type="nvarchar(max)" />
+    <Property Name="grpAddedDt" Type="datetime" />
+    <Property Name="grpEdtdByUsID" Type="nvarchar(max)" />
+    <Property Name="grpEdtDt" Type="datetime" />
+    <Property Name="grpDeletedByUsID" Type="nvarchar(max)" />
+    <Property Name="grpDeletedDt" Type="datetime" />
+    <Property Name="grpIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="grpIsPublished" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Channels">
+    <Key>
+      <PropertyRef Name="Id_chan" />
+    </Key>
+    <Property Name="Id_chan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="chanSID" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanVPID" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanAPID" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanLang" Type="nvarchar(max)" />
+    <Property Name="chanName_En" Type="nvarchar(max)" />
+    <Property Name="chanName_Ar" Type="nvarchar(max)" />
+    <Property Name="chanFreq" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanPolarity" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanSR" Type="float" />
+    <Property Name="chanFCB" Type="nvarchar(max)" />
+    <Property Name="chanSatID" Type="float" />
+    <Property Name="chanOwnerID" Type="float" />
+    <Property Name="chanLogoLink" Type="nvarchar(max)" />
+    <Property Name="chanEncryption" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanIsTeletext" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanAddres_En" Type="nvarchar(max)" />
+    <Property Name="chanAddres_Ar" Type="nvarchar(max)" />
+    <Property Name="chanLiveSreamLink" Type="nvarchar(max)" />
+    <Property Name="chanIsHD" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanType" Type="float" />
+    <Property Name="chanGroupID" Type="float" />
+    <Property Name="chanAddedByUsID" Type="nvarchar(max)" />
+    <Property Name="chanAddedDt" Type="datetime" />
+    <Property Name="chanEdtdByUsID" Type="nvarchar(max)" />
+    <Property Name="chanEdtDt" Type="datetime" />
+    <Property Name="chanDeletedByUsID" Type="nvarchar(max)" />
+    <Property Name="chanDeletedDt" Type="datetime" />
+    <Property Name="chanIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanIsPublished" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Channels_SRs">
+    <Key>
+      <PropertyRef Name="Id_chanSR" />
+    </Key>
+    <Property Name="Id_chanSR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="chanSR" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanSRAddedBy" Type="nvarchar(max)" />
+    <Property Name="chanSRAddedDT" Type="datetime" />
+    <Property Name="chanSREditedBy" Type="nvarchar(max)" />
+    <Property Name="chanSREditedDT" Type="datetime" />
+    <Property Name="chanSRDeletedBy" Type="nvarchar(max)" />
+    <Property Name="chanSRDeletedDate" Type="datetime" />
+    <Property Name="chanSRIsPublished" Type="nvarchar" MaxLength="255" />
+    <Property Name="chanSRIsDeleted" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ChannelsTypes">
+    <Key>
+      <PropertyRef Name="Id_ChanType" />
+    </Key>
+    <Property Name="Id_ChanType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChannelType_Ar" Type="nvarchar(max)" />
+    <Property Name="ChannelType_En" Type="nvarchar(max)" />
+    <Property Name="ChanTypeAddedBy" Type="nvarchar(max)" />
+    <Property Name="ChanTypeAddedDT" Type="datetime" />
+    <Property Name="ChanTypeEditedBy" Type="nvarchar(max)" />
+    <Property Name="ChanTypeEditedDT" Type="datetime" />
+    <Property Name="ChanTypeDeletedBy" Type="nvarchar(max)" />
+    <Property Name="ChanTypeDeletedDate" Type="datetime" />
+    <Property Name="ChanTypeIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="ChanTypeIsPublished" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="CoveringAreas">
+    <Key>
+      <PropertyRef Name="Id_covArea" />
+    </Key>
+    <Property Name="Id_covArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="covAreaName_Ar" Type="nvarchar(max)" />
+    <Property Name="covAreaName_En" Type="nvarchar(max)" />
+    <Property Name="covAreaLongFrom" Type="float" />
+    <Property Name="covAreaLongTo" Type="float" />
+    <Property Name="covAreaOrienFrom" Type="nvarchar" MaxLength="255" />
+    <Property Name="covAreaOrienTo" Type="nvarchar" MaxLength="255" />
+    <Property Name="covAreaCountries" Type="nvarchar(max)" />
+    <Property Name="covAreaAddedByUsID" Type="nvarchar(max)" />
+    <Property Name="covAreaAddedDt" Type="datetime" />
+    <Property Name="covAreaEdtdByUsID" Type="nvarchar(max)" />
+    <Property Name="covAreaEdtDt" Type="datetime" />
+    <Property Name="covAreaDeletedByUsID" Type="nvarchar(max)" />
+    <Property Name="covAreaDeletedDt" Type="datetime" />
+    <Property Name="covAreaIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="covAreaIsPublished" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Frequencies_Owners">
+    <Key>
+      <PropertyRef Name="Id_owner" />
+    </Key>
+    <Property Name="Id_owner" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ownerName_Ar" Type="nvarchar(max)" />
+    <Property Name="ownerName_En" Type="nvarchar(max)" />
+    <Property Name="logoLink" Type="nvarchar(max)" />
+    <Property Name="ownerAdd_Ar" Type="nvarchar(max)" />
+    <Property Name="ownerAdd_En" Type="nvarchar(max)" />
+    <Property Name="ownerAddedByUsID" Type="nvarchar(max)" />
+    <Property Name="ownerAddedDt" Type="datetime" />
+    <Property Name="ownerEdtdByUsID" Type="nvarchar(max)" />
+    <Property Name="ownerEdtDt" Type="datetime" />
+    <Property Name="ownerDeletedByUsID" Type="nvarchar(max)" />
+    <Property Name="ownerDeletedDt" Type="datetime" />
+    <Property Name="ownerIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="ownerIsPublished" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LogosLinks">
+    <Key>
+      <PropertyRef Name="Id_logoslinks" />
+    </Key>
+    <Property Name="folderName" Type="nvarchar(max)" />
+    <Property Name="logosLinks" Type="nvarchar(max)" />
+    <Property Name="logosLinksAddedBy" Type="nvarchar(max)" />
+    <Property Name="logosLinksAddedDT" Type="datetime" />
+    <Property Name="logosLinksEditedBy" Type="nvarchar(max)" />
+    <Property Name="logosLinksEditedDT" Type="datetime" />
+    <Property Name="logosLinksDeletedBy" Type="nvarchar(max)" />
+    <Property Name="logosLinksDeletedDT" Type="datetime" />
+    <Property Name="logosLinksIsPublished" Type="nvarchar" MaxLength="255" />
+    <Property Name="logosLinksIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="Id_logoslinks" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Satellites_">
+    <Key>
+      <PropertyRef Name="Id_sat" />
+    </Key>
+    <Property Name="Id_sat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="satName_Ar" Type="nvarchar(max)" />
+    <Property Name="satName_En" Type="nvarchar(max)" />
+    <Property Name="satCovAreaID" Type="float" />
+    <Property Name="satLongitude" Type="nvarchar(max)" />
+    <Property Name="satLongitudeOri" Type="nvarchar" MaxLength="255" />
+    <Property Name="satSystem" Type="nvarchar(max)" />
+    <Property Name="satLogoName" Type="nvarchar(max)" />
+    <Property Name="satAddedByUsID" Type="nvarchar(max)" />
+    <Property Name="satAddedDt" Type="datetime" />
+    <Property Name="satEdtdByUsID" Type="nvarchar(max)" />
+    <Property Name="satEdtDt" Type="datetime" />
+    <Property Name="satDeletedByUsID" Type="nvarchar(max)" />
+    <Property Name="satDeletedDt" Type="datetime" />
+    <Property Name="satIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="satIsPublished" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="userName_Ar" Type="nvarchar(max)" />
+    <Property Name="userName_En" Type="nvarchar(max)" />
+    <Property Name="Id_userEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="userType" Type="nvarchar(max)" />
+    <Property Name="userAddedDt" Type="datetime" />
+    <Property Name="userEdtdByUsID" Type="nvarchar(max)" />
+    <Property Name="userEdtDt" Type="datetime" />
+    <Property Name="userDeletedByUsID" Type="nvarchar(max)" />
+    <Property Name="userDeletedDt" Type="datetime" />
+    <Property Name="userIsDeleted" Type="nvarchar" MaxLength="255" />
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ChannelFinderDBModelStoreContainer">
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Channels" EntityType="Self.Channels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Channels_SRs" EntityType="Self.Channels_SRs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChannelsTypes" EntityType="Self.ChannelsTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CoveringAreas" EntityType="Self.CoveringAreas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Frequencies_Owners" EntityType="Self.Frequencies_Owners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogosLinks" EntityType="Self.LogosLinks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Satellites_" EntityType="Self.Satellites_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
